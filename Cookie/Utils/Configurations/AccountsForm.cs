@@ -25,6 +25,8 @@ namespace Cookie.Utils.Configurations
                 lvAccounts.Add(new ListViewItem(a.Username));
                 lvAccounts.Items[lvAccounts.Items.Length - 1].SubItems.Add(new string('•', a.Password.Length));
             });
+            if (GlobalConfiguration.Instance.Accounts.Count == 0)
+                lvAccounts.Add(new ListViewItem());
         }
 
         private void ConnectToolStripMenuItem_Click(object sender, EventArgs e)
